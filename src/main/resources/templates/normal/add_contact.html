@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::Layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Add contact</title>
+</head>
+<body>
+<section>
+	<div class="container mar">
+  <div class="row justify-content-center  mt-3">
+    <div class="col-md-10">
+      <div class="card ">
+        <div class="card-body">
+          <!-- Contact Form -->
+          <form method="post" th:action="@{/user/process_contact}" action="#" th:object="${contact}" enctype="multipart/form-data" >
+            <!-- Name -->
+            <div class="mb-3 text-center"><h1>Add Contact</h1></div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input required type="text" class="form-control" id="name" name="name" placeholder="Enter name here">
+            </div>
+            <!-- Second Name -->
+            <div class="mb-3">
+              <label for="secondname" class="form-label">Surname</label>
+              <input required type="text" class="form-control" id="secondname" name="secondname" placeholder="Enter Surname here">
+            </div>
+            <!-- Work -->
+            <div class="mb-3">
+              <label for="work" class="form-label">Work</label>
+              <input required type="text" class="form-control" id="work" name="work" placeholder="Enter work here">
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input required type="email" class="form-control" id="email" name="email" placeholder="Enter email here">
+            </div>
+            <!-- Phone -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Mobile No.</label>
+              <input required min="10"  type="number" class="form-control" id="phone" name="phone" placeholder="Enter mobile number">
+            </div>
+            
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="mytextarea" name="description" placeholder="Description"></textarea>
+            </div>
+            <!-- Image -->
+            <div class="mb-3">
+              <label for="image" class="form-label">Profile picture</label>
+              <input type="file" class="form-control-file" id="image" name="pimage" >
+            </div>
+            <div class="mb-3">
+              <input type="submit" class="btn btn-primary w-100" value="Save Contact">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+</section>
+</body> 
+</html>

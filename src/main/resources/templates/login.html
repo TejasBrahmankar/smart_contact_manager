@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+	<!--<div class="wrapper fadeInDown">
+  <div id="formContent">
+     Tabs Titles 
+
+    
+
+     Login Form 
+    <form method="post" th:action="@{/dologin}" action="#">
+		<div th:if="${param.error}" class="alert alert-danger">
+			Invalid username or password
+		</div>
+		<div th:if="${param.logout}" class="alert alert-success">
+			You have been logged out
+		</div>
+		<div>
+      <input type="text" id="login" class="fadeIn second login" name="username" placeholder="Email ID"></div>
+      <div><input type="password" id="password" class="fadeIn third login" name="password" placeholder="password"></div>
+      <input type="submit" class="fadeIn fourth login" value="Log In">
+   
+    </form>
+
+     Remind Passowrd 
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>-->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <!-- Login Form -->
+          <form method="post" th:action="@{/dologin}" action="#">
+            <div th:if="${param.error}" class="alert alert-danger">
+              Invalid username or password
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+              You have been logged out
+            </div>
+            <div class="mb-3">
+              <input type="text" id="login" class="form-control" name="username" placeholder="Email ID">
+            </div>
+            <div class="mb-3">
+              <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="mb-3">
+              <input type="submit" class="btn btn-primary w-100" value="Log In">
+            </div>
+          </form>
+
+          <!-- Remind Password -->
+          <div class="text-center">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</body> 
+</html>
